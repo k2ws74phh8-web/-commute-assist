@@ -2,13 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>通勤アシスト</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>通勤アシスト Ver.1.2</title>
 
 <style>
 body{
     margin:0;
-    background:#f3f8ff;
+    background:#eef5ff;
     font-family:-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
@@ -24,8 +25,8 @@ header{
 .card{
     background:white;
     margin:15px;
-    padding:16px;
-    border-radius:15px;
+    padding:18px;
+    border-radius:16px;
     box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
@@ -33,28 +34,36 @@ header{
     color:#0d6efd;
     font-size:20px;
     font-weight:bold;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
-.value{
+.big{
     font-size:24px;
     font-weight:bold;
 }
 
-.small{
-    color:#666;
-    margin-top:5px;
+.info{
+    font-size:18px;
+    line-height:2;
+}
+
+.advice{
+    background:#fff9d6;
+    border-left:6px solid orange;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
 }
 
 button{
     width:90%;
-    display:block;
     margin:25px auto;
-    padding:15px;
+    display:block;
     border:none;
-    border-radius:12px;
     background:#0d6efd;
     color:white;
+    padding:16px;
+    border-radius:12px;
     font-size:20px;
 }
 
@@ -64,6 +73,7 @@ footer{
     margin:25px;
 }
 </style>
+
 </head>
 
 <body>
@@ -73,31 +83,81 @@ footer{
 </header>
 
 <div class="card">
-<div class="title">📅 今日</div>
-<div class="value" id="today"></div>
+
+<div class="title">
+📅 今日
+</div>
+
+<div class="big" id="today"></div>
+
 </div>
 
 <div class="card">
-<div class="title">📍 通勤ルート</div>
-<div class="value">
+
+<div class="title">
+📍 通勤ルート
+</div>
+
+<div class="big">
 下総中山 → 高輪ゲートウェイ
 </div>
+
 </div>
 
 <div class="card">
-<div class="title">🕗 出発予定</div>
-<div class="value">8:18</div>
-<div class="small">9時前後到着予定</div>
+
+<div class="title">
+🚆 今日の通勤
+</div>
+
+<div class="info">
+
+🕗 出発予定：8:18<br>
+
+🚆 おすすめ：市川乗換（快速）<br>
+
+🕘 到着予定：8:56
+
+</div>
+
 </div>
 
 <div class="card">
-<div class="title">🚆 おすすめルート</div>
-<div class="value">市川乗換（快速）</div>
+
+<div class="title">
+🌤️ 天気・服装
+</div>
+
+<div class="info">
+
+☀️ 天気：確認中<br>
+
+🌡️ 気温：--℃<br>
+
+☔ 降水確率：--％<br>
+
+🌂 傘：確認中<br>
+
+👕 服装：確認中
+
+</div>
+
 </div>
 
 <div class="card">
-<div class="title">🕘 到着予定</div>
-<div class="value">8:56</div>
+
+<div class="title">
+💡 今日のアドバイス
+</div>
+
+<div class="advice">
+
+毎朝「更新」を押すだけで最新情報を確認できます。<br><br>
+
+Ver.1.3では天気・気温・遅延情報を自動取得予定です。
+
+</div>
+
 </div>
 
 <button onclick="location.reload()">
@@ -105,15 +165,20 @@ footer{
 </button>
 
 <footer>
-Commute Assist Ver.1.1
+
+Commute Assist Ver.1.2
+
 </footer>
 
 <script>
-const days=["日","月","火","水","木","金","土"];
-const now=new Date();
+
+const week=["日","月","火","水","木","金","土"];
+
+const d=new Date();
 
 document.getElementById("today").innerHTML=
-`${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日（${days[now.getDay()]}）`;
+`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日（${week[d.getDay()]}）`;
+
 </script>
 
 </body>
