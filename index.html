@@ -1,185 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>通勤アシスト Ver.1.2</title>
+<title>通勤アシスト</title>
 
-<style>
-body{
-    margin:0;
-    background:#eef5ff;
-    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-}
-
-header{
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:18px;
-    font-size:28px;
-    font-weight:bold;
-}
-
-.card{
-    background:white;
-    margin:15px;
-    padding:18px;
-    border-radius:16px;
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
-}
-
-.title{
-    color:#0d6efd;
-    font-size:20px;
-    font-weight:bold;
-    margin-bottom:12px;
-}
-
-.big{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.info{
-    font-size:18px;
-    line-height:2;
-}
-
-.advice{
-    background:#fff9d6;
-    border-left:6px solid orange;
-    padding:15px;
-    border-radius:10px;
-    margin-top:10px;
-}
-
-button{
-    width:90%;
-    margin:25px auto;
-    display:block;
-    border:none;
-    background:#0d6efd;
-    color:white;
-    padding:16px;
-    border-radius:12px;
-    font-size:20px;
-}
-
-footer{
-    text-align:center;
-    color:#777;
-    margin:25px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
 <header>
+
 🚉 通勤アシスト
+
 </header>
 
 <div class="card">
 
-<div class="title">
-📅 今日
-</div>
+<h2>📅 今日</h2>
 
-<div class="big" id="today"></div>
+<p id="today"></p>
 
 </div>
 
 <div class="card">
 
-<div class="title">
-📍 通勤ルート
-</div>
+<h2>📍 通勤</h2>
 
-<div class="big">
-下総中山 → 高輪ゲートウェイ
-</div>
+<p>下総中山 → 高輪ゲートウェイ</p>
 
 </div>
 
 <div class="card">
 
-<div class="title">
-🚆 今日の通勤
-</div>
+<h2>🌤 天気</h2>
 
-<div class="info">
+<p id="weather">取得中...</p>
 
-🕗 出発予定：8:18<br>
+<p id="temp"></p>
 
-🚆 おすすめ：市川乗換（快速）<br>
+<p id="rain"></p>
 
-🕘 到着予定：8:56
+<p id="umbrella"></p>
 
-</div>
+<p id="clothes"></p>
 
 </div>
 
-<div class="card">
+<button onclick="loadWeather()">
 
-<div class="title">
-🌤️ 天気・服装
-</div>
-
-<div class="info">
-
-☀️ 天気：確認中<br>
-
-🌡️ 気温：--℃<br>
-
-☔ 降水確率：--％<br>
-
-🌂 傘：確認中<br>
-
-👕 服装：確認中
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="title">
-💡 今日のアドバイス
-</div>
-
-<div class="advice">
-
-毎朝「更新」を押すだけで最新情報を確認できます。<br><br>
-
-Ver.1.3では天気・気温・遅延情報を自動取得予定です。
-
-</div>
-
-</div>
-
-<button onclick="location.reload()">
 🔄 更新
+
 </button>
 
-<footer>
-
-Commute Assist Ver.1.2
-
-</footer>
-
-<script>
-
-const week=["日","月","火","水","木","金","土"];
-
-const d=new Date();
-
-document.getElementById("today").innerHTML=
-`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日（${week[d.getDay()]}）`;
-
-</script>
+<script src="app.js"></script>
 
 </body>
 </html>
