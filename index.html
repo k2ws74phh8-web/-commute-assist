@@ -1,1 +1,120 @@
-<h1>通勤アシスト</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>通勤アシスト</title>
+
+<style>
+body{
+    margin:0;
+    background:#eef5ff;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+header{
+    background:#1976d2;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.card{
+    background:white;
+    margin:15px;
+    padding:18px;
+    border-radius:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+.title{
+    color:#1976d2;
+    font-weight:bold;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.big{
+    font-size:24px;
+    font-weight:bold;
+}
+
+button{
+    width:90%;
+    margin:20px auto;
+    display:block;
+    background:#1976d2;
+    color:white;
+    border:none;
+    padding:15px;
+    font-size:20px;
+    border-radius:12px;
+}
+
+footer{
+    text-align:center;
+    color:#777;
+    margin:25px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+🚉 通勤アシスト
+</header>
+
+<div class="card">
+<div class="title">今日の通勤</div>
+
+<div class="big">
+下総中山 → 高輪ゲートウェイ
+</div>
+</div>
+
+<div class="card">
+<div class="title">出発予定</div>
+
+🕗 8:18
+</div>
+
+<div class="card">
+<div class="title">おすすめルート</div>
+
+🚆 市川乗換（快速）
+</div>
+
+<div class="card">
+<div class="title">到着予定</div>
+
+🕘 8:56
+</div>
+
+<div class="card">
+<div class="title">天気・服装</div>
+
+☀️ 天気：確認中
+
+🌡️ 気温：--
+
+☂️ 傘：--
+
+👕 服装：--
+</div>
+
+<button onclick="location.reload()">
+🔄 更新
+</button>
+
+<footer>
+
+Version 1.0
+
+</footer>
+
+</body>
+</html>
