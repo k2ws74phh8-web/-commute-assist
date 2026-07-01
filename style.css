@@ -1,6 +1,10 @@
-/* ===========================
-   通勤アシスト Ver.1.3A
-=========================== */
+/* ===================================
+   通勤アシスト Ver.1.5
+=================================== */
+
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
@@ -9,82 +13,172 @@ body{
     color:#333;
 }
 
-/* ヘッダー */
-
 header{
     background:#0d6efd;
     color:white;
     text-align:center;
-    font-size:28px;
-    font-weight:bold;
     padding:20px;
     box-shadow:0 2px 8px rgba(0,0,0,.2);
 }
 
-/* カード */
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:15px;
+}
+
+main{
+    max-width:700px;
+    margin:auto;
+    padding:15px;
+}
 
 .card{
+
     background:white;
-    margin:15px;
+
+    margin-bottom:18px;
+
     padding:18px;
+
     border-radius:16px;
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+
 }
 
 .card h2{
+
     margin-top:0;
+
     color:#0d6efd;
-    font-size:22px;
+
 }
 
 .card p{
-    font-size:20px;
+
+    font-size:18px;
+
     line-height:1.8;
-    margin:8px 0;
+
 }
 
-/* ボタン */
+label{
+
+    display:block;
+
+    margin-top:14px;
+
+    font-weight:bold;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:6px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    background:white;
+
+}
 
 button{
-    width:90%;
-    display:block;
-    margin:25px auto;
-    padding:16px;
-    font-size:20px;
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
     border:none;
+
     border-radius:12px;
+
     background:#0d6efd;
+
     color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
     cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#0b5ed7;
+
 }
 
 button:active{
+
     transform:scale(.98);
+
 }
 
-/* フッター */
+#refreshButton{
+
+    margin-bottom:30px;
+
+}
 
 footer{
-    text-align:center;
-    color:#777;
-    padding:20px;
-    font-size:14px;
-}
 
-/* スマホ表示最適化 */
+    text-align:center;
+
+    color:#777;
+
+    padding:20px;
+
+    font-size:14px;
+
+}
 
 @media (max-width:600px){
 
-header{
-    font-size:26px;
-}
+    header h1{
 
-.card p{
-    font-size:19px;
-}
+        font-size:24px;
 
-button{
-    font-size:19px;
-}
+    }
+
+    .card{
+
+        padding:15px;
+
+    }
+
+    .card p{
+
+        font-size:17px;
+
+    }
+
+    input{
+
+        font-size:16px;
+
+    }
+
+    button{
+
+        font-size:17px;
+
+    }
 
 }
