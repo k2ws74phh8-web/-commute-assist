@@ -100,3 +100,18 @@ async function loadWeather(){
 
 today();
 loadWeather();
+// 通勤情報
+document.getElementById("departure").textContent = "8:18";
+document.getElementById("route").textContent = "市川乗換（快速）";
+document.getElementById("arrival").textContent = "8:56";
+
+// 運行情報（Ver.1.4では固定表示）
+document.getElementById("sobu").textContent = "🟢 総武線：平常運転";
+document.getElementById("rapid").textContent = "🟢 総武快速線：平常運転";
+document.getElementById("yamanote").textContent = "🟢 山手線：確認中";
+document.getElementById("keihin").textContent = "🟢 京浜東北線：平常運転";
+
+// AIアドバイス
+document.getElementById("advice").innerHTML =
+"現在の天気と気温を参考に服装を選びましょう。<br>" +
+"出発予定は8:18、市川乗換（快速）がおすすめです。";
