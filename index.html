@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>通勤アシスト</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>通勤アシスト Ver.1.5</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,31 +18,91 @@
 
 <header>
 
-🚉 通勤アシスト
+<h1>🚉 通勤アシスト</h1>
+
+<p>毎日の通勤をサポート</p>
 
 </header>
 
-<div class="card">
+<main>
+
+<!-- 今日 -->
+
+<section class="card">
 
 <h2>📅 今日</h2>
 
-<p id="today"></p>
+<p id="today">取得中...</p>
 
-</div>
+</section>
 
-<div class="card">
+<!-- 通勤 -->
 
-<h2>📍 通勤</h2>
+<section class="card">
 
-<p>下総中山 → 高輪ゲートウェイ</p>
+<h2>🚆 今日の通勤</h2>
 
-</div>
+<p>
 
-<div class="card">
+<strong>出発駅</strong><br>
 
-<h2>🌤 天気</h2>
+<span id="fromStation">
+下総中山
+</span>
 
-<p id="weather">取得中...</p>
+</p>
+
+<p>
+
+<strong>到着駅</strong><br>
+
+<span id="toStation">
+高輪ゲートウェイ
+</span>
+
+</p>
+
+<p>
+
+<strong>出発予定</strong><br>
+
+<span id="departure">
+8:18
+</span>
+
+</p>
+
+<p>
+
+<strong>到着予定</strong><br>
+
+<span id="arrival">
+8:56
+</span>
+
+</p>
+
+<p>
+
+<strong>おすすめルート</strong><br>
+
+<span id="route">
+市川乗換（快速）
+</span>
+
+</p>
+
+</section>
+
+<!-- 天気 -->
+
+<section class="card">
+
+<h2>🌤️ 天気</h2>
+
+<p id="weather">
+取得中...
+</p>
 
 <p id="temp"></p>
 
@@ -49,48 +112,35 @@
 
 <p id="clothes"></p>
 
-</div>
+</section>
 
-<button onclick="loadWeather()">
+<!-- JR -->
 
-🔄 更新
-
-</button>
-
-<script src="app.js"></script>
-
-</body>
-</html>
-<div class="card">
-
-<h2>🚆 今日の通勤</h2>
-
-<p><strong>🕗 出発予定</strong><br>
-<span id="departure">8:18</span></p>
-
-<p><strong>🚉 おすすめルート</strong><br>
-<span id="route">市川乗換（快速）</span></p>
-
-<p><strong>🕘 到着予定</strong><br>
-<span id="arrival">8:56</span></p>
-
-</div>
-
-<div class="card">
+<section class="card">
 
 <h2>🚨 JR運行情報</h2>
 
-<p id="sobu">総武線　確認中...</p>
+<p id="sobu">
+総武線：確認中...
+</p>
 
-<p id="rapid">総武快速線　確認中...</p>
+<p id="rapid">
+総武快速線：確認中...
+</p>
 
-<p id="yamanote">山手線　確認中...</p>
+<p id="yamanote">
+山手線：確認中...
+</p>
 
-<p id="keihin">京浜東北線　確認中...</p>
+<p id="keihin">
+京浜東北線：確認中...
+</p>
 
-</div>
+</section>
 
-<div class="card">
+<!-- AIアドバイス -->
+
+<section class="card">
 
 <h2>💡 今日の通勤アドバイス</h2>
 
@@ -98,4 +148,67 @@
 情報を取得しています...
 </p>
 
-</div>
+</section>
+
+<!-- 設定 -->
+
+<section class="card">
+
+<h2>⚙️ 設定</h2>
+
+<label>出発駅</label>
+
+<input
+type="text"
+id="settingFrom"
+value="下総中山">
+
+<label>到着駅</label>
+
+<input
+type="text"
+id="settingTo"
+value="高輪ゲートウェイ">
+
+<label>通常の出発時刻</label>
+
+<input
+type="time"
+id="settingDeparture"
+value="08:18">
+
+<label>目標到着時刻</label>
+
+<input
+type="time"
+id="settingArrival"
+value="09:00">
+
+<label>おすすめルート</label>
+
+<input
+type="text"
+id="settingRoute"
+value="市川乗換（快速）">
+
+<button id="saveButton">
+
+💾 設定を保存
+
+</button>
+
+</section>
+
+<button id="refreshButton">
+
+🔄 更新
+
+</button>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
